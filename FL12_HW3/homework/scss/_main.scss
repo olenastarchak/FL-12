@@ -1,0 +1,212 @@
+$radius: 5px;
+$font-weight: (
+  "light": 500,
+  "medium": 600,
+  "hard": 900
+);
+
+@mixin buttons ($margin: 0) {
+  background-color: map-get($bg-colors, "button");
+  color: map-get($font-colors, "white");
+  border: none;
+  border-radius: $radius;
+  padding: 15px 42px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-weight: map-get($font-weight, "medium");
+  font-size: 16px;
+  width: 140px;
+  margin-left: $margin;
+}
+
+@mixin links($whatcolor, $font-size, $margin: 0) {
+  font-family: map-get($font-families, "headers");
+  font-weight: map-get($font-weight, "light");
+  color: map-get($font-colors, $whatcolor);
+  font-size: $font-size;
+  margin-left: $margin;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: map-get($bg-colors, "body");
+}
+
+.header {
+  background: $bg-image center no-repeat;
+  background-size: cover;
+  height: 680px;
+  border-bottom-right-radius: 790px 250px;
+  padding: 20px;
+  color: map-get($font-colors, "main");
+  font-family: map-get($font-families, "headers");
+}
+
+  .header-wrap {
+    padding: 0 170px;
+    max-width: 35%;
+  }
+
+    .landing-logo {
+      display: inline-block;
+      img {
+        float: left;
+      }
+      p {
+        @extend img;
+        font-family: map-get($font-families, "paragraphs");
+        font-weight: map-get($font-weight, "hard");
+        font-size: 24px;
+        text-align: center;
+        margin: 7px 13px;
+        line-height: 20px;
+        span {
+          display: block;
+          font-size: 10px;
+        }
+      }
+    }
+
+    .header_heading {
+      font-size: 71px;
+      font-weight: map-get($font-weight, "hard");
+      line-height: 70px;
+      margin: 55px 0;
+      &::before {
+        content: 'awesome';
+        position: absolute;
+        margin-top: 71px;
+        background-color: map-get($bg-colors, "highlight");
+      }
+    }
+
+    .header_text {
+      white-space: pre;
+      font-size: 16px;
+      font-family: map-get($font-families, "paragraphs");
+      margin: -17px -45px;
+      line-height: 24px;
+    }
+
+    .header_button {
+      @include buttons;
+    }
+
+    .login {
+      @include links("white", 20px, 150px);
+    }
+    
+.section_text {
+  text-align: center;
+  font-size: 42px;
+  font-weight: map-get($font-weight, "medium");
+  font-family: map-get($font-families, "headers");
+  color: map-get($font-colors, "main");
+  &::before {
+    content: 'adventure';
+    position: absolute;
+    margin-left: 220px;
+    background-color: map-get($bg-colors, "highlight");
+  }
+}
+
+.section_card_wrap {
+  max-width: 61%;
+  margin: auto;
+}
+
+  .section_card {
+    display: flex;
+    background-color: map-get($bg-colors, "divs");
+    border: 20px solid transparent;
+    border-radius: $radius;
+    margin: 23px;
+    font-family: map-get($font-families, "paragraphs");
+  }
+
+    .section_card_img {
+      width: 40%;
+      border-radius: $radius;
+      background-size: contain;
+    }
+
+    .section_card_right_container {
+      width: 42%;
+      margin: auto;
+      text-align: center;
+    }
+      .section_card_heading {
+        color: map-get($font-colors, "white");;
+        font-family: map-get($font-families, "headers");
+        font-size: 24px;
+        font-weight: map-get($font-weight, "medium");
+        margin-bottom: 35px;
+      }
+
+      .section_card_text {
+        color: map-get($font-colors, "section");
+        text-align: justify;
+      }
+
+      .section_link {
+        @include links("section", 16px)
+      }
+
+.section_banner {
+  display: flex;
+  position: relative;
+  top: 110px;
+  width: 62%;
+  height: 140px;
+  margin: auto;
+  background-image: $banner-bg;
+  border-radius: $radius;
+}
+
+  .section_banner_text_wrap {
+    margin: auto 150px;
+  }
+
+    .section_banner_heading {
+      color: map-get($font-colors, "main");
+      font-size: 30px;
+      font-weight: map-get($font-weight, "hard");
+      font-family: map-get($font-families, "headers");
+      margin: 0;
+      &::before {
+        @extend .section_text::before;
+        content: 'start';
+        margin-left: 122px;
+      }
+    }
+
+    .section_banner_text {
+      color: map-get($font-colors, "section");
+      font-family: map-get($font-families, "paragraphs");
+    }  
+
+  .section_banner_button {
+    @include buttons (170px);
+  }
+  
+.footer {
+  background-color: map-get($bg-colors, "divs");
+  height: 240px;
+  margin-top: 40px;
+}
+
+  .footer-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 190px 60px;
+    font-family: map-get($font-families, "paragraphs");
+    color: map-get($font-colors, "section");
+  }
+
+    .footer_text {
+      width: 20%;
+      font-size: 14px;        
+    }
