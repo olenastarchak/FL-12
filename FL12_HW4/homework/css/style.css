@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  height: 100vh;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  background-color: #ffffff;
+  letter-spacing: 5px;
+}
+
+.header-heading {
+  position: relative;
+  left: 14%;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: 600;
+  color: #777;
+}
+
+.header-navigation {
+  overflow: hidden;
+  position: relative;
+  right: 14%;
+}
+
+.header-navigation a {
+  color: #777;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  padding: 18px;
+}
+
+.header-navigation a:hover {
+  color: #bfba55;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../img/home-bg.jpg") center top no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 850px;
+  color: #ffffff;
+  margin-top: 85px;
+}
+
+.header-content h1 {
+  font-size: 4.5vw;
+  margin-top: 90px;
+}
+
+.header-content p {
+  font-size: 12px;
+  color: #bfba55;
+  letter-spacing: 3px;
+  line-height: 50px;
+}
+
+.header-button {
+  background-color: #ffffff;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  border-width: 0;
+  border-radius: 45px;
+  padding: 16px 26px;
+  margin: 34px auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 59%;
+  margin: auto;
+  color: #777;
+}
+
+.section > img {
+  width: 100%;
+  height: auto;
+}
+
+.section h3 {
+  font-size: 30px;
+  margin: 40px 0 17px;
+  color: #000;
+}
+
+.section-line {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.section-line img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.section-item {
+  margin: 0.5vw;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.section-button {
+  background-color: #ffffff;
+  color: #777;
+  font-size: 0.85vw;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid #777;
+  border-radius: 45px;
+  padding: 1vw;
+  margin: 38px 0;
+  width: 20%;
+}
+
+hr {
+  margin: 30px 0 80px;
+  border-top: 0;
+}
+
+.footer {
+  width: 100%;
+  background-color: #000;
+  margin-top: 70px;
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 59%;
+  height: 360px;
+  margin: auto;
+  color: #777;
+  font-size: 18px;
+}
+
+.footer-col1 {
+  width: 48%;
+  line-height: 24px;
+}
+
+.footer-col2 {
+  width: 38%;
+  line-height: 36px;
+}
+
+.footer-wrap h3 {
+  font-size: 29px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-wrap p {
+  margin: 16px 0 32px;
+}
