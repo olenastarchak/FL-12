@@ -5,5 +5,5 @@ function pipe(var1, ...callback) {
   }
   return var1;
 }
-console.log(pipe(1, addOne)); //=> 2
-console.log(pipe(1, addOne, addOne)); //=> 3
+pipe(1, addOne); //=> 2
+pipe(1, addOne, addOne); //=> 3
