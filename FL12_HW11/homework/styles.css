@@ -1,0 +1,29 @@
+i {
+  float: left;
+  color: rgb(216, 164, 41);
+}
+
+div {
+  min-height: 24px;
+  padding-left: 15px;
+}
+
+.hideChildren > .node {
+  display: none;
+}
+
+.grey {
+  color: grey;
+}
+
+.highlight, .highlight2 {
+  cursor: pointer;
+}
+
+.highlight:hover {
+  background-color: rgb(240, 236, 236);
+}
+
+.highlight2 {
+  font-style: italic;
+}
