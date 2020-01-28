@@ -1,0 +1,11 @@
+.divSet {
+  border: 1px solid black;
+  padding: 2px;
+  margin: 2px;
+}
+
+.termDiv {
+  border: 1px solid blue;
+  padding: 2px;
+  margin: 2px;
+}
