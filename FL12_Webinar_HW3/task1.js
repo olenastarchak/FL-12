@@ -47,7 +47,7 @@ class Card {
 class Deck {
   constructor() {
     this.cards = [];
-    let suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+    const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
     for (let i of suits) {
       for (let j = 1; j <= 13; j++) {
         this.cards.push(new Card(i, j));
