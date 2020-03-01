@@ -1,0 +1,24 @@
+.usernode {
+  display: flex;
+}
+
+.user, .postnode {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+#spinner {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(spinner.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(95, 160, 151, 0.267);
+  display: none;
+}
+
+.img {
+  width: 20%;
+}
