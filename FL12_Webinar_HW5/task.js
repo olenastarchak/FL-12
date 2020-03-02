@@ -243,7 +243,7 @@ async function renderPostsPage() {
         const postext = document.createElement("div");
         postext.textContent = post.body;
         const comheader = document.createElement("p");
-        comheader.textContent = 'Comments';
+        comheader.textContent = 'COMMENTS';
         postnode.append(postitle, postext, comheader);
         arr[1].forEach(comment => {
           if (comment.postId === post.id) {
@@ -253,9 +253,12 @@ async function renderPostsPage() {
             const commentitle = document.createElement("div");
             commentitle.textContent = comment.name;
             commentitle.style.fontWeight = "bold";
+            const commentmail = document.createElement("div");
+            commentmail.textContent = comment.email;
+            commentmail.style.fontStyle = "italic";
             const commentext = document.createElement("div");
             commentext.textContent = comment.body;
-            commentnode.append(commentitle, commentext);
+            commentnode.append(commentitle, commentmail, commentext);
           }
         })
       });  
