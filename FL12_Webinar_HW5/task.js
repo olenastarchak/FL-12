@@ -212,9 +212,8 @@ function redirect(e) {
   location.hash = `#posts${id}`;
 }
 
-function renderPostsPage() {
+async function renderPostsPage() {
   allPostsPage.innerHTML = "";
-  showSpinner();
   const userID = location.hash.match(/[\d]+$/)[0];
   const backLink = document.createElement("a");
   backLink.href = "#";
@@ -222,10 +221,19 @@ function renderPostsPage() {
   const backButton = document.createElement("button");
   backLink.append(backButton);
   backButton.textContent = "back";
-  fetch(`https://jsonplaceholder.typicode.com/users/${userID}/posts`)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(post => {
+  let urls = [
+    `https://jsonplaceholder.typicode.com/users/${userID}/posts`,
+    `https://jsonplaceholder.typicode.com/comments`
+  ];
+  showSpinner();
+  let requests = urls.map(url => fetch(url));
+  const responses = await Promise.all(requests)
+  Promise.all(responses.map(arr => arr.json()))
+  .then(arr => {
+    arr[0].forEach(post => {
+        const header = document.createElement("p");
+        allPostsPage.append(header);
+        header.textContent = 'POST';
         const postnode = document.createElement("div");
         allPostsPage.append(postnode);
         postnode.classList.add("postnode");
@@ -234,11 +242,28 @@ function renderPostsPage() {
         postitle.style.fontWeight = "bold";
         const postext = document.createElement("div");
         postext.textContent = post.body;
-        postnode.append(postitle, postext);
-      });
-      hideSpinner();
+        const comheader = document.createElement("p");
+        comheader.textContent = 'Comments';
+        postnode.append(postitle, postext, comheader);
+        arr[1].forEach(comment => {
+          if (comment.postId === post.id) {
+            const commentnode = document.createElement("div");
+            commentnode.classList.add("commentnode");
+            postnode.append(commentnode);
+            const commentitle = document.createElement("div");
+            commentitle.textContent = comment.name;
+            commentitle.style.fontWeight = "bold";
+            const commentext = document.createElement("div");
+            commentext.textContent = comment.body;
+            commentnode.append(commentitle, commentext);
+          }
+        })
+      });  
     });
+    hideSpinner(); 
 }
+
+
 
 hideAllPages();
 showHomePage();

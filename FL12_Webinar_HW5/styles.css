@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.user, .postnode {
+.user, .postnode, .commentnode {
   margin: 5px;
   border: 1px solid black;
 }
