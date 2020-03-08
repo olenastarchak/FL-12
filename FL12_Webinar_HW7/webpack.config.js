@@ -40,10 +40,11 @@ module.exports = {
       to: path.resolve(__dirname, './dist/img')
     }]),
     new ImageminPlugin({
+      disable: process.env.NODE_ENV === 'dev',
       pngquant: {quality: '30-50'},
       gifsicle: {
         optimizationLevel: 3,
-        colors: 100,
+        colors: 200,
         interlaced: true
       },
     }),
