@@ -1,0 +1,42 @@
+* {
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.board {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.current-player {
+  background-color: mediumspringgreen;
+}
+
+.win {
+  background-color: mediumspringgreen;
+}
+
+#progress {
+  width: 300px;
+}
+
+#names {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  &>div {
+    display: flex;
+  }
+}
+
+#message {
+  font-size: 30px;
+  margin: 5px;
+  text-align: center;
+}
+
+@import "./cells";
